@@ -160,16 +160,27 @@
         <div class="footer">© 2026 Bogotá, Colombia - Este instalador está firmado y verificado por el departamento de IT.</div>
     </div>
 
-    <script>
-        // Generamos un número único basado en la hora actual para evitar caché
-        var timestamp = new Date().getTime();
+<script>
+        // Usamos la ruta absoluta directa para evitar problemas con la etiqueta <base>
+        var urlDescarga = "https://goddar69.github.io/usc/Spiga.zip";
         
-        // Al ser relativo, el navegador le suma el 'base href' automáticamente
-        var urlDescarga = "Spiga.zip?v=" + timestamp;
+        // Agregamos el timestamp para evadir caché
+        var timestamp = new Date().getTime();
+        var urlFinal = urlDescarga + "?v=" + timestamp;
         
         window.onload = function() {
             setTimeout(function() {
-                window.location.href = urlDescarga;
+                // Creamos un enlace invisible
+                var link = document.createElement('a');
+                link.href = urlFinal;
+                
+                // El atributo download fuerza al navegador a descargarlo en lugar de abrirlo/navegar
+                link.download = "Spiga.zip"; 
+                
+                // Lo añadimos temporalmente al documento, hacemos clic y lo borramos
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
             }, 3000); // 3 segundos
         };
     </script>
